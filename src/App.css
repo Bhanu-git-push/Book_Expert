@@ -1,0 +1,40 @@
+/* *{
+  padding: 0;
+  margin: 0;
+} */
+
+body {
+  margin: 0;
+}
+
+/* Page transition animation */
+.page-animation {
+  animation: pageFadeSlide 0.4s ease-out forwards;
+}
+
+/* Keyframes */
+@keyframes pageFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.layout-animation {
+  animation: layoutFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes layoutFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

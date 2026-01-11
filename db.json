@@ -1,0 +1,267 @@
+{
+  "users": [
+    {
+      "id": "a3f1c8b2-9f4e-4c6d-b2a1-91d5f6b12e01",
+      "firstName": "Demo",
+      "LastName": "User",
+      "email": "demo@example.com",
+      "mobile": "987653424",
+      "password": "demo@123",
+      "confirmPassword": "demo@123"
+    },
+    {
+      "id": "b7d9a2e4-3c8f-4b1d-9a56-72e3f1c0ab22",
+      "firstName": "Employee",
+      "LastName": "User",
+      "email": "employee@example.com",
+      "mobile": "787654366",
+      "password": "employee@123",
+      "confirmPassword": "employee@123"
+    },
+    {
+      "id": "c1e4f8a9-7b2d-41e6-a2c5-8d9f01b3e456",
+      "firstName": "Admin",
+      "LastName": "User",
+      "email": "admin@example.com",
+      "mobile": "987564320",
+      "password": "admin@123",
+      "confirmPassword": "admin@123"
+    },
+    {
+      "id": "9c73506b-4572-4d22-bd5e-4f9c25da03eb",
+      "firstName": "Bhanu Prakash",
+      "lastName": "Tirupati",
+      "email": "bhanu.mail4tech@gmail.com",
+      "mobile": "8367475736",
+      "password": "bhanu@123",
+      "confirmPassword": "bhanu@123"
+    }
+  ],
+  "employees": [
+    {
+      "id": "394857",
+      "image": "/images/maleSampleProfile.png",
+      "name": "K Ramesh Rao",
+      "gender": "Male",
+      "dob": "1987-09-30",
+      "state": "Andhra Pradesh",
+      "active": true
+    },
+    {
+      "id": "729384",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Anitha Gopalakrishnan",
+      "gender": "Female",
+      "dob": "1996-09-20",
+      "state": "Tamil Nadu",
+      "active": true
+    },
+    {
+      "id": "344753",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Pankaj Tripathi",
+      "gender": "Male",
+      "dob": "1993-07-13",
+      "state": "Uttar Pradesh",
+      "active": false
+    },
+    {
+      "id": "928374",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Rahul Sharma",
+      "gender": "Male",
+      "dob": "1992-03-12",
+      "state": "Karnataka",
+      "active": false
+    },
+    {
+      "id": "837465",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Anita Verma",
+      "gender": "Female",
+      "dob": "1995-08-25",
+      "state": "Delhi",
+      "active": false
+    },
+    {
+      "id": "564738",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Vikram Singh",
+      "gender": "Male",
+      "dob": "1989-11-19",
+      "state": "Punjab",
+      "active": true
+    },
+    {
+      "id": "847362",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Priya Kapoor",
+      "gender": "Female",
+      "dob": "1997-02-28",
+      "state": "Maharashtra",
+      "active": true
+    },
+    {
+      "id": "928475",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Amit Patel",
+      "gender": "Male",
+      "dob": "1990-06-15",
+      "state": "Gujarat",
+      "active": false
+    },
+    {
+      "id": "485739",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Rohit Mehta",
+      "gender": "Male",
+      "dob": "1988-12-22",
+      "state": "Rajasthan",
+      "active": true
+    },
+    {
+      "id": "593847",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Suresh Kumar",
+      "gender": "Male",
+      "dob": "1991-01-30",
+      "state": "Tamil Nadu",
+      "active": true
+    },
+    {
+      "id": "374856",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Deepika Nair",
+      "gender": "Female",
+      "dob": "1993-05-17",
+      "state": "Kerala",
+      "active": false
+    },
+    {
+      "id": "483920",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Anjali Sharma",
+      "gender": "Female",
+      "dob": "1996-07-21",
+      "state": "Haryana",
+      "active": true
+    },
+    {
+      "id": "384756",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Karan Verma",
+      "gender": "Male",
+      "dob": "1992-10-09",
+      "state": "Uttar Pradesh",
+      "active": false
+    },
+    {
+      "id": "493857",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Neha Jain",
+      "gender": "Female",
+      "dob": "1995-04-14",
+      "state": "Madhya Pradesh",
+      "active": true
+    },
+    {
+      "id": "384957",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Pooja Desai",
+      "gender": "Female",
+      "dob": "1994-12-01",
+      "state": "Maharashtra",
+      "active": false
+    },
+    {
+      "id": "587439",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Manoj Gupta",
+      "gender": "Male",
+      "dob": "1987-09-11",
+      "state": "Bihar",
+      "active": true
+    },
+    {
+      "id": "594837",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Vivek Raina",
+      "gender": "Male",
+      "dob": "1990-03-26",
+      "state": "Himachal Pradesh",
+      "active": true
+    },
+    {
+      "id": "483756",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Ritika Singh",
+      "gender": "Female",
+      "dob": "1997-08-18",
+      "state": "Uttarakhand",
+      "active": true
+    },
+    {
+      "id": "384968",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Sanjay Nair",
+      "gender": "Male",
+      "dob": "1989-05-05",
+      "state": "Kerala",
+      "active": false
+    },
+    {
+      "id": "374859",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Sneha Reddy",
+      "gender": "Female",
+      "dob": "1994-09-03",
+      "state": "Andhra Pradesh",
+      "active": true
+    },
+    {
+      "id": "593447",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Megha Kapoor",
+      "gender": "Female",
+      "dob": "1993-11-29",
+      "state": "Delhi",
+      "active": true
+    },
+    {
+      "id": "384759",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Ajay Sharma",
+      "gender": "Male",
+      "dob": "1991-02-14",
+      "state": "Punjab",
+      "active": true
+    },
+    {
+      "id": "495837",
+      "image": "/images/femaleSampleProfile.png",
+      "name": "Sonal Mehta",
+      "gender": "Female",
+      "dob": "1995-06-07",
+      "state": "Gujarat",
+      "active": false
+    },
+    {
+      "id": "583947",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Rakesh Kumar",
+      "gender": "Male",
+      "dob": "1988-10-22",
+      "state": "Rajasthan",
+      "active": true
+    },
+    {
+      "id": "384857",
+      "image": "/images/maleSampleProfile.png",
+      "name": "Praveen Joshi",
+      "gender": "Male",
+      "dob": "1990-07-12",
+      "state": "Maharashtra",
+      "active": false
+    }
+  ]
+}
