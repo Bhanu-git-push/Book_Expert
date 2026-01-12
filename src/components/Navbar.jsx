@@ -176,7 +176,7 @@ const Navbar = () => {
               >
                 Login
               </NavLink>
-
+              <span>/</span>
               <NavLink
                 to="/register"
                 className={linkClass}
