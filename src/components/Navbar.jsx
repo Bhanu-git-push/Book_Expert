@@ -168,7 +168,7 @@ const Navbar = () => {
 
           {/* Mobile auth section */}
           {!isAuth ? (
-            <li className="flex gap-4">
+            <li className="flex gap-1">
               <NavLink
                 to="/login"
                 className={linkClass}
