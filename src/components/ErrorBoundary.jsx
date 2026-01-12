@@ -26,6 +26,7 @@ class ErrorBoundary extends Component {
             We're sorry, the page failed to load. Please try again later.
           </p>
           <a
+            href=""
             onClick={() => window.location.reload()}
             className="text-sm font-medium text-blue-400 hover:underline hover:text-blue-600"
           >
