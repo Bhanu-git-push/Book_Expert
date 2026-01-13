@@ -33,9 +33,7 @@ const Navbar = () => {
       {/* Navbar header */}
       <div className="px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <NavLink to="/">
-          <FaTasks size={26} className="text-indigo-600 dark:text-indigo-300" />
-        </NavLink>
+        <FaTasks size={26} className="text-indigo-600 dark:text-indigo-300" />
 
         {/* Desktop menu */}
         <ul className="hidden md:flex gap-10 font-medium text-lg text-gray-800 dark:text-gray-200">
