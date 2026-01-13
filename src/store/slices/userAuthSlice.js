@@ -37,7 +37,7 @@ const userAuthSlice = createSlice({
       state.isError = false;
     },
 
-    lOGIN_SUCCESS: (state, action) => {
+    LOGIN_SUCCESS: (state, action) => {
       state.isLoading = false;
       state.isAuth = true;
       state.isError = false;
@@ -49,7 +49,7 @@ const userAuthSlice = createSlice({
         JSON.stringify({
           user: action.payload,
           loginTime: Date.now(),
-          expiryTime: Date.now() + EXPIRY_TIME, // 👈 add this
+          expiryTime: Date.now() + EXPIRY_TIME,
         })
       );
     },
@@ -83,7 +83,7 @@ const userAuthSlice = createSlice({
 
 export const {
   LOGIN_REQUEST,
-  lOGIN_SUCCESS,
+  LOGIN_SUCCESS,
   LOGIN_FAILURE,
   LOGIN_RESET,
   LOGOUT,

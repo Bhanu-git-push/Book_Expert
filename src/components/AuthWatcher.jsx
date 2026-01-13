@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { LOGOUT } from "../store/slices/userAuthSlice";
 
@@ -8,6 +8,7 @@ const IDLE_TIME = 5 * 60 * 1000;// 5 minutes
 const AuthWatcher = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isAuth } = useSelector((state) => state.userAuth);
 
   const idleTimerRef = useRef(null);
 
@@ -17,6 +18,8 @@ const AuthWatcher = () => {
   };
 
   const resetIdleTimer = () => {
+    if (!isAuth) return;
+
     if (idleTimerRef.current) {
       clearTimeout(idleTimerRef.current);
     }
@@ -27,6 +30,8 @@ const AuthWatcher = () => {
   };
 
   useEffect(() => {
+    if (!isAuth) return;
+
     const events = [
       "mousemove",
       "mousedown",
@@ -45,13 +50,15 @@ const AuthWatcher = () => {
     );
 
     return () => {
-      if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
+      }
 
       events.forEach((event) =>
         window.removeEventListener(event, resetIdleTimer)
       );
     };
-  }, []);
+  }, [isAuth]);
 
   return null; // No UI rendered
 };

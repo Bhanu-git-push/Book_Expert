@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   LOGIN_REQUEST,
-  lOGIN_SUCCESS,
+  LOGIN_SUCCESS,
   LOGIN_FAILURE,
 } from "../store/slices/userAuthSlice";
 import { userLogin } from "../api/userAuthAPI";
@@ -12,7 +12,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { isLoading, isError } = useSelector((state) => state.userAuth);
+  const { isLoading, isError, isAuth  } = useSelector((state) => state.userAuth);
 
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -27,13 +27,19 @@ const Login = () => {
       const user = await userLogin({ email, password });
 
       // valid credentials
-      dispatch(lOGIN_SUCCESS(user));
-      navigate("/dashboard");
+      dispatch(LOGIN_SUCCESS(user));
+      // navigate("/dashboard");
     } catch (error) {
       // invalid credentials
       dispatch(LOGIN_FAILURE());
     }
   };
+
+  useEffect(() => {
+  if (isAuth) {
+    navigate("/dashboard", { replace: true });
+  }
+}, [isAuth, navigate]);
 
   return (
     <section

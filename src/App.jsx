@@ -33,16 +33,15 @@ function App() {
 
                 <Route element={<PrivateRoute />}>
                   <Route path="/dashboard" element={<Dashboard />} />
+                  <Route
+                    path="/add-edit-employee"
+                    element={<AddEditEmployee />}
+                  />
+                  <Route
+                    path="/add-edit-employee/:id"
+                    element={<AddEditEmployee />}
+                  />
                 </Route>
-
-                <Route
-                  path="/add-edit-employee"
-                  element={<AddEditEmployee />}
-                />
-                <Route
-                  path="/add-edit-employee/:id"
-                  element={<AddEditEmployee />}
-                />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="*" element={<PageNotFound />} />
