@@ -166,7 +166,7 @@ const Register = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2 rounded-md bg-indigo-500 text-white font-semibold hover:bg-indigo-600 disabled:opacity-60"
+            className="w-full py-2 rounded-md bg-indigo-500 text-white font-semibold hover:bg-indigo-600 disabled:opacity-60 cursor-pointer"
           >
             {loading ? "Registering..." : "Register"}
           </button>
@@ -183,7 +183,8 @@ const Register = () => {
             Login
           </Link>
         </p>
-
+        
+        {/* Go back */}
         <p className="text-center mt-2">
           <Link to="/" className="text-sm text-blue-600 hover:underline">
             Go Back

@@ -94,7 +94,7 @@ const Navbar = () => {
                 {/* Logout button */}
                 <button
                   onClick={handleLogout}
-                  className="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded"
+                  className="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded cursor-pointer"
                 >
                   Logout
                 </button>
@@ -198,7 +198,7 @@ const Navbar = () => {
                       handleLogout();
                       setIsMobileMenuOpen(false);
                     }}
-                    className="bg-red-400 hover:bg-red-500 text-white px-2 py-1 rounded w-fit"
+                    className="bg-red-400 hover:bg-red-500 text-white px-2 py-1 rounded w-fit cursor-pointer"
                   >
                     Logout
                   </button>

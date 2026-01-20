@@ -257,7 +257,7 @@ function Dashboard() {
         <div className="relative flex gap-3">
           <button
             onClick={handleAddEmployee}
-            className="px-4 py-2 bg-indigo-500 text-white rounded shadow hover:bg-indigo-600 transition"
+            className="px-4 py-2 bg-indigo-500 text-white rounded shadow hover:bg-indigo-600 transition cursor-pointer"
           >
             Add Employee +
           </button>
@@ -265,7 +265,7 @@ function Dashboard() {
           <button
             id="print-button"
             onClick={togglePrintDropdown}
-            className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded shadow hover:bg-gray-700 transition"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded shadow hover:bg-gray-700 transition cursor-pointer"
           >
             Print <FiDownload className="text-lg" />
           </button>
@@ -274,7 +274,7 @@ function Dashboard() {
             <div className="absolute right-0 mt-2 w-48 bg-white border-0 rounded-lg shadow-lg z-50 transform transition-all duration-200 ease-out opacity-0 scale-95 translate-y-[-4px] animate-dropdown">
               <button
                 onClick={handleDownloadImage}
-                className="w-full text-left px-4 py-2 hover:bg-gray-200 rounded-t-lg"
+                className="w-full text-left px-4 py-2 hover:bg-gray-200 rounded-t-lg cursor-pointer"
               >
                 Download as Image
               </button>
@@ -283,7 +283,7 @@ function Dashboard() {
 
               <button
                 onClick={handleDownloadPDF}
-                className="w-full text-left px-4 py-2 hover:bg-gray-200 rounded-b-lg"
+                className="w-full text-left px-4 py-2 hover:bg-gray-200 rounded-b-lg cursor-pointer"
               >
                 Download as PDF
               </button>

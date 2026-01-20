@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { addEmployee, updateEmployee } from "../api/employeesAPI";
 
@@ -235,6 +235,13 @@ function AddEditEmployee() {
           >
             {editingEmployee ? "Update Employee" : "Add Employee"}
           </button>
+
+          {/* Go back */}
+          <p className="text-center mt-2">
+            <Link to="/dashboard" className="text-sm text-blue-600 hover:underline">
+              Go Back
+            </Link>
+          </p>
         </form>
       </div>
     </section>

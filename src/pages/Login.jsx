@@ -129,6 +129,7 @@ const Login = () => {
                   text-white text-xl font-semibold
                   py-2 rounded-md
                   disabled:opacity-60
+                  cursor-pointer
                 "
               >
                 {isLoading ? "Logging in..." : "Log in"}
