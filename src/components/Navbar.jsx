@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaTasks, FaBars } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
 import { useSelector, useDispatch } from "react-redux";
 import { LOGOUT } from "../store/slices/userAuthSlice";
 import LoadingSpinner from "./LoadingSpinner";
@@ -107,7 +108,8 @@ const Navbar = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="md:hidden text-gray-800 dark:text-gray-200"
         >
-          <FaBars size={26} />
+          {/* <FaBars size={26} /> */}
+          {isMobileMenuOpen ? <IoClose size={26} /> : <FaBars size={26} />}
         </button>
       </div>
 
