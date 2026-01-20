@@ -157,7 +157,7 @@ const Login = () => {
               <p className="text-center">
                 <Link
                   to="/"
-                  className="text-sm font-medium text-blue-600 hover:underline"
+                  className="text-sm text-blue-600 hover:underline"
                 >
                   Go Back
                 </Link>
