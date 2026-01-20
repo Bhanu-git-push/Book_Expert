@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import {
   getEmployees,
   deleteEmployee as deleteEmployeeAPI,
@@ -112,29 +112,19 @@ function Dashboard() {
     }
   };
 
-  const [printType, setPrintType] = useState(null); // "image" | "pdf" | null
+  const [printType, setPrintType] = useState(null);
+  const showAllBeforePrint = useRef(false);
 
   /* Print functions */
   const handleDownloadImage = async () => {
-    // await downloadAsImage("print-area");
-    // setShowPrintDropdown(false);
-
-    if (!showAll) {
-      setShowAll(true);
-    }
+    showAllBeforePrint.current = showAll; // remember current state
+    if (!showAll) setShowAll(true); // temporarily show all
     setPrintType("image");
-
-    // setShowAll(true);
-    // setPrintType("image");
   };
 
   const handleDownloadPDF = async () => {
-    // await downloadAsPDF("print-area");
-    // setShowPrintDropdown(false);
-
-    if (!showAll) {
-      setShowAll(true);
-    }
+    showAllBeforePrint.current = showAll; // remember current state
+    if (!showAll) setShowAll(true); // temporarily show all
     setPrintType("pdf");
   };
 
@@ -158,8 +148,15 @@ function Dashboard() {
       } finally {
         if (!cancelled) {
           setShowPrintDropdown(false);
-          setShowAll(false);
+          // setShowAll(false);
           setPrintType(null);
+
+          // revert showAll if it was false before download
+          if (!showAllBeforePrint.current) {
+            setShowAll(false);
+            setItemsPerPage(5);
+            setCurrentPage(1);
+          }
         }
       }
     };
@@ -217,9 +214,15 @@ function Dashboard() {
     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
 
   const handleToggleShowAll = () => {
-    setShowAll((prev) => !prev);
-    setCurrentPage(1);
-    setItemsPerPage(showAll ? 5 : filteredEmployees.length);
+    setShowAll((prev) => {
+      // compute new showAll value first
+      const newShowAll = !prev;
+
+      setCurrentPage(1);
+      setItemsPerPage(newShowAll ? filteredEmployees.length : 5);
+
+      return newShowAll;
+    });
   };
 
   /* Counts */
@@ -276,7 +279,7 @@ function Dashboard() {
                 Download as Image
               </button>
 
-              <hr className="border-gray-200" />
+              <hr className="border-gray-300" />
 
               <button
                 onClick={handleDownloadPDF}
