@@ -242,62 +242,78 @@ function Dashboard() {
       </div>
 
       {/* Search & Filters */}
-      <div className="w-full max-w-6xl bg-white p-4 mb-4 rounded shadow flex flex-col gap-4 md:flex-row md:items-center">
-        {/* Search */}
-        <input
-          type="text"
-          placeholder="Search by name..."
-          value={searchTerm}
-          onChange={(e) => {
-            setSearchTerm(e.target.value);
-            setCurrentPage(1);
-          }}
-          className="border px-3 py-2 rounded w-full"
-        />
+      <div className="w-full max-w-6xl bg-white p-4 mb-4 rounded shadow">
+        {/* Heading */}
+        <h1 className="text-xl font-semibold mb-4">Filter By:</h1>
 
-        {/* Gender */}
-        <select
-          value={genderFilter}
-          onChange={(e) => {
-            setGenderFilter(e.target.value);
-            setCurrentPage(1);
-          }}
-          className="border px-3 py-2 rounded w-full"
-        >
-          <option value="all">All Genders</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
+        {/* Filters and reset */}
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:gap-6">
+          {/* Name */}
+          <div className="w-full md:flex-1">
+            <label className="block mb-1 font-medium">Employee Name:</label>
+            <input
+              type="text"
+              placeholder="Search by name..."
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setCurrentPage(1);
+              }}
+              className="border px-3 py-2 rounded w-full"
+            />
+          </div>
 
-        {/* Status */}
-        <select
-          value={statusFilter}
-          onChange={(e) => {
-            setStatusFilter(e.target.value);
-            setCurrentPage(1);
-          }}
-          className="border px-3 py-2 rounded w-full"
-        >
-          <option value="all">All Status</option>
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
-        </select>
+          {/* Gender */}
+          <div className="w-full md:flex-1">
+            <label className="block mb-1 font-medium">Gender:</label>
+            <select
+              value={genderFilter}
+              onChange={(e) => {
+                setGenderFilter(e.target.value);
+                setCurrentPage(1);
+              }}
+              className="border px-3 py-2 rounded w-full"
+            >
+              <option value="all">All Genders</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
 
-        {/* Reset Button */}
-        <div className="flex justify-center md:justify-center lg:justify-start w-full lg:w-auto">
-          <button
-            onClick={() => {
-              setSearchTerm("");
-              setGenderFilter("all");
-              setStatusFilter("all");
-              setShowAll(false);
-              setItemsPerPage(5);
-              setCurrentPage(1);
-            }}
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded w-32"
-          >
-            Reset
-          </button>
+          {/* Status */}
+          <div className="w-full md:flex-1">
+            <label className="block mb-1 font-medium">Status:</label>
+            <select
+              value={statusFilter}
+              onChange={(e) => {
+                setStatusFilter(e.target.value);
+                setCurrentPage(1);
+              }}
+              className="border px-3 py-2 rounded w-full"
+            >
+              <option value="all">All Status</option>
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+
+          {/* Reset */}
+          <div className="w-full md:w-auto flex justify-center md:justify-start">
+            <button
+              onClick={() => {
+                setSearchTerm("");
+                setGenderFilter("all");
+                setStatusFilter("all");
+                setShowAll(false);
+                setItemsPerPage(5);
+                setCurrentPage(1);
+              }}
+              className="
+          bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded sm:w-[140px] md:min-w-[160px] md:max-w-sm"
+            >
+              Reset
+            </button>
+          </div>
         </div>
       </div>
 
@@ -379,15 +395,21 @@ function Dashboard() {
       {/* Employee details */}
       <div className="flex flex-wrap gap-6 justify-center">
         <div className="bg-indigo-100 px-6 py-4 rounded-lg text-center min-w-[160px]">
-          <p className="font-semibold">Total Employees</p>
+          <p className="font-semibold">
+            Total<br></br>Employees
+          </p>
           <p className="text-2xl">{totalEmployees}</p>
         </div>
         <div className="bg-green-100 px-6 py-4 rounded-lg text-center min-w-[160px]">
-          <p className="font-semibold">Active Employees</p>
+          <p className="font-semibold">
+            Total Active<br></br>Employees
+          </p>
           <p className="text-2xl">{activeCount}</p>
         </div>
         <div className="bg-red-100 px-6 py-4 rounded-lg text-center min-w-[160px]">
-          <p className="font-semibold">Inactive Employees</p>
+          <p className="font-semibold">
+            Total Inactive<br></br>Employees
+          </p>
           <p className="text-2xl">{inactiveCount}</p>
         </div>
       </div>

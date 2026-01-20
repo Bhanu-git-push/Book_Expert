@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { LOGOUT } from "../store/slices/userAuthSlice";
 
-const IDLE_TIME = 5 * 60 * 1000;// 5 minutes
+const IDLE_TIME = 5 * 60 * 1000; // 5 minutes
 
 const AuthWatcher = () => {
   const dispatch = useDispatch();
@@ -19,6 +19,19 @@ const AuthWatcher = () => {
 
   const resetIdleTimer = () => {
     if (!isAuth) return;
+
+    // update last activity in session storage
+    const stored = sessionStorage.getItem("userAuth");
+    if (stored) {
+      const data = JSON.parse(stored);
+      sessionStorage.setItem(
+        "userAuth",
+        JSON.stringify({
+          ...data,
+          lastActivity: Date.now(),
+        })
+      );
+    }
 
     if (idleTimerRef.current) {
       clearTimeout(idleTimerRef.current);
@@ -45,9 +58,7 @@ const AuthWatcher = () => {
     resetIdleTimer();
 
     // Listen for user activity
-    events.forEach((event) =>
-      window.addEventListener(event, resetIdleTimer)
-    );
+    events.forEach((event) => window.addEventListener(event, resetIdleTimer));
 
     return () => {
       if (idleTimerRef.current) {

@@ -11,7 +11,8 @@ const loadUserFromSession = () => {
   const now = Date.now();
 
   // Expired
-  if (now - parsed.loginTime > EXPIRY_TIME) {
+  // if (now - parsed.loginTime > EXPIRY_TIME) {
+  if (now - parsed.lastActivity > EXPIRY_TIME) {
     sessionStorage.removeItem("userAuth");
     return null;
   }
@@ -48,8 +49,9 @@ const userAuthSlice = createSlice({
         "userAuth",
         JSON.stringify({
           user: action.payload,
-          loginTime: Date.now(),
-          expiryTime: Date.now() + EXPIRY_TIME,
+          // loginTime: Date.now(),
+          // expiryTime: Date.now() + EXPIRY_TIME,
+          lastActivity: Date.now(),
         })
       );
     },

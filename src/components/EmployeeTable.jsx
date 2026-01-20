@@ -81,19 +81,21 @@ const EmployeeRow = memo(
         </td>
 
         {/* Actions */}
-        <td className="border p-3 space-x-2">
-          <button
-            className="px-3 py-1 bg-blue-400 hover:bg-blue-500 text-white rounded"
-            onClick={() => onEdit(emp.id)}
-          >
-            Edit
-          </button>
-          <button
-            className="px-3 py-1 bg-red-400 hover:bg-red-500 text-white rounded"
-            onClick={() => onDelete(emp)}
-          >
-            Delete
-          </button>
+        <td className="border p-3">
+          <div className="flex flex-col items-center justify-center gap-2 lg:flex-row lg:gap-2">
+            <button
+              className="px-3 py-1 bg-blue-400 hover:bg-blue-500 text-white rounded w-full lg:w-auto"
+              onClick={() => onEdit(emp.id)}
+            >
+              Edit
+            </button>
+            <button
+              className="px-3 py-1 bg-red-400 hover:bg-red-500 text-white rounded w-full lg:w-auto"
+              onClick={() => onDelete(emp)}
+            >
+              Delete
+            </button>
+          </div>
         </td>
       </tr>
     );
