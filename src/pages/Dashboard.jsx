@@ -112,16 +112,64 @@ function Dashboard() {
     }
   };
 
+  const [printType, setPrintType] = useState(null); // "image" | "pdf" | null
+
   /* Print functions */
   const handleDownloadImage = async () => {
-    await downloadAsImage("print-area");
-    setShowPrintDropdown(false);
+    // await downloadAsImage("print-area");
+    // setShowPrintDropdown(false);
+
+    if (!showAll) {
+      setShowAll(true);
+    }
+    setPrintType("image");
+
+    // setShowAll(true);
+    // setPrintType("image");
   };
 
   const handleDownloadPDF = async () => {
-    await downloadAsPDF("print-area");
-    setShowPrintDropdown(false);
+    // await downloadAsPDF("print-area");
+    // setShowPrintDropdown(false);
+
+    if (!showAll) {
+      setShowAll(true);
+    }
+    setPrintType("pdf");
   };
+
+  useEffect(() => {
+    if (!showAll || !printType) return;
+
+    let cancelled = false;
+
+    const download = async () => {
+      // wait for DOM to fully paint
+      await new Promise(requestAnimationFrame);
+
+      if (cancelled) return;
+
+      try {
+        if (printType === "image") {
+          await downloadAsImage("print-area");
+        } else if (printType === "pdf") {
+          await downloadAsPDF("print-area");
+        }
+      } finally {
+        if (!cancelled) {
+          setShowPrintDropdown(false);
+          setShowAll(false);
+          setPrintType(null);
+        }
+      }
+    };
+
+    download();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [showAll, printType]);
 
   /* Handle dropdown */
   const togglePrintDropdown = () => setShowPrintDropdown((prev) => !prev);
@@ -220,19 +268,19 @@ function Dashboard() {
           </button>
 
           {showPrintDropdown && (
-            <div className="absolute right-0 mt-2 w-48 bg-white border-0 rounded-lg shadow-lg z-50">
+            <div className="absolute right-0 mt-2 w-48 bg-white border-0 rounded-lg shadow-lg z-50 transform transition-all duration-200 ease-out opacity-0 scale-95 translate-y-[-4px] animate-dropdown">
               <button
                 onClick={handleDownloadImage}
-                className="w-full text-left px-4 py-2 hover:bg-gray-200 rounded-lg"
+                className="w-full text-left px-4 py-2 hover:bg-gray-200 rounded-t-lg"
               >
                 Download as Image
               </button>
 
-              <hr className="border-gray-500" />
+              <hr className="border-gray-200" />
 
               <button
                 onClick={handleDownloadPDF}
-                className="w-full text-left px-4 py-2 hover:bg-gray-200 rounded-lg"
+                className="w-full text-left px-4 py-2 hover:bg-gray-200 rounded-b-lg"
               >
                 Download as PDF
               </button>
